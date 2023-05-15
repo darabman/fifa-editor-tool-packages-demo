@@ -14,10 +14,11 @@ jobs:
     steps:
       - name: Checkout sources
         uses: actions/checkout@v2
-      - name: Download releaseartifacts
-        uses: actions/download-artifact@v2
+      - name: copy file
+        uses: canastro/copy-file-action@master
         with:
-          name: FIFASDK23.dll
+          source: FIFASDK23.dll
+          target: release/FIFASDK23.dll
       - name: Generate checksum
         uses: jmgilman/actions-generate-checksum@v1
         with:
